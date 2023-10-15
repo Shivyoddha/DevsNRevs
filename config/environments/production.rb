@@ -72,7 +72,7 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
   config.require_master_key = true
-  config.secret_key_base = Rails.application.credentials.production[:secret_key_base]
+  config.secret_key_base = " 5ebff665e8df20d0d5f207be36143fc636612043eee3fa726c34fa9a1f7c40e77df9c1add10acb33db2c76a1874cf793ed712531aa877597c72d9b0588ac2afd"
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
