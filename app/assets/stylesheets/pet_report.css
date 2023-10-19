@@ -1,0 +1,15 @@
+.head{
+  background-image: url('<%= wicked_pdf_asset_base64("pdf_background.jpg") %>');
+  height:200px;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.left-head{
+  display:flex;
+ background-color:red;
+}
+.right-head{
+  display:flex;
+background-color:green;
+}

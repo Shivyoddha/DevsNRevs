@@ -1,0 +1,35 @@
+<%=wicked_pdf_stylesheet_link_tag 'pet_report' %>
+<style>
+  .head{
+    background-image: url('<%= wicked_pdf_asset_base64("pdf_background.jpg") %>');
+    height:200px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+  }
+  .boody{
+    margin-top: 220px;
+    margin-bottom: 80px;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  .boody-head{
+    padding: 5px;
+    padding-left:15px;
+    color:white;
+    font-family:"Playpen Sans";
+    font-size:30px;
+    background-color: teal;
+  }
+</style>
+  <div class="head">
+  <%=  image_tag wicked_pdf_asset_base64("header2.png"),style:"height:350px;"%>
+  </div>
+  <div class="boody">
+   <div class="boody-head">
+     Pet Details
+   </div>
+   <div class="boody-left">
+     <img src=<%= @image%> style="height:400px;width:400px;padding-top:20px;">
+   </div>
+  </div>
