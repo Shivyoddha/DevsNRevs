@@ -15,6 +15,8 @@ class HomeController < ApplicationController
     @image = RandomDog.get_random_image
     dogfood = DogFood.new
     @dogcups = dogfood.query(@activity, @weight)
+    doginfo = DogInfo.new
+    @dognutrition = doginfo.query(@breed)
     hugging_face_service = HuggingFaceService.new
 
   first_response = hugging_face_service.query({ "inputs" => "Symptoms of rabies is " })
