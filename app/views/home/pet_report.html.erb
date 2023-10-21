@@ -1,21 +1,18 @@
 <%= wicked_pdf_stylesheet_link_tag 'pet_report' %>
-<div class="container">
   <div class="head">
     <%= image_tag wicked_pdf_asset_base64("header2.png"), style: "height: 350px;" %>
   </div>
-</div>
-
 <div class="container c2">
   <table class="two-column-table">
     <tr>
+      <th colspan="2" class="boody-head">Pet Details <%= image_tag wicked_pdf_asset_base64("collar.png"), style: "height: 40px; width: 40px; " %></th>
+    </tr>
+    <tr>
       <td class="left-column">
-        <img src="<%= @image %>" style="height:400px;width:400px;">
+        <img src="<%= @image %>" style="height:400px;width:400px">
       </td>
       <td class="right-column">
         <table class="details-table">
-          <tr>
-            <th colspan="2" class="boody-head">Pet Details</th>
-          </tr>
           <tr>
             <td>Pet Name:</td>
             <td><%= @name %></td>
@@ -36,24 +33,61 @@
             <td>Pet Weight:</td>
             <td><%= @weight %></td>
           </tr>
-          <tr>
-            <td>Pet Food Needed:</td>
-            <td><%= @dogcups %></td>
-          </tr>
         </table>
+        <div class="pet information">
+          <div style="text-align:center; justify-content:center">  Pet Food Needed:<div id="dogFoodImages">
+            <br>
+            <% (1..@dogcups.round).each do |i| %>
+                <%= image_tag wicked_pdf_asset_base64("dogfoodani.png"), style: "height: 30px; width: 30px; margin:3px" %>
+            <% end %>
+</div><br>
+          <%= @dogcups %> cups</div>
+        </div>
       </td>
     </tr>
   </table>
-<div class="pet information">
-    Best suggested food for pet : <%= @dognutrition %><br>
-    Symptoms of rabies : <%= @symptom1 %> <br>
-    Causes of rabies : <%= @cause1 %> <br>
-    Remedies of Alzhiemer : <%= @remedy1 %> <br>
-    Symptoms of Alzhiemer : <%= @symptom2 %> <br>
-    Causes of Alzhiemer : <%= @cause2 %> <br>
-    Remedies of rabies : <%= @remedy2 %> <br>
-    Symptoms of Lupus : <%= @symptom3 %> <br>
-    Causes of Lupus : <%= @cause3 %> <br>
-    Remedies of Lupus : <%= @remedy3 %> <br>
-   </div>
+
+  <br><br><br>
+  <div class="cups" ,style= "height: 1800px; width: 800px;">
+    <div class="boody-head"><%= image_tag wicked_pdf_asset_base64("idea.png"), style: "height: 40px; width: 40px;" %> Best suggested food for pet : </div>
+    <br>
+      <p class="best-suggested-food" style="font-family:Georgia">German Shepherds requirea diet rich in high-quality animal-based protein to support their muscle developmentand overallenergy needs. Look for dog foods
+with realmeatas the primary ingredient, such aschicken, beef, or fish. Ensurethat the dog food providesa balanced blend of protein, fats,and carbohydrates.
+German Shepherdsareactive dogs, so they need a diet that provides sufficientenergy and nutrients to sustain theiractivity level. This breed is proneto hip and
+joint issues, so a dog food with added glucosamineand chondroitin can help support their joint health. Look for dog foods thatcontain omega-3 fatty acids,
+such as thosefound in fish oil. Thesefatty acids help maintain healthy skin,coat,and can reduceinflammation. Avoid dog foods thatcontain excessivefillers
+likecorn, soy,and wheat,as they providelittle nutritional valueand can lead to digestiveissues in some dogs. Opt for dog foods that don'tcontain artificial
+colors, flavors, or preservatives. German Shepherds have different nutritional needsas puppies,adults,and seniors. Choosea dog food tailored to your dog's
+lifestage.</p>
   </div>
+    <br><br><br>
+  <div class="pet information2">
+    <div class="boody-head"><%= image_tag wicked_pdf_asset_base64("idea.png"), style: "height: 40px; width: 40px" %> About the possible predicted diseases : </div>
+    <br>
+    <p class="possible-ailments">Rabies:
+- Causes: Rabies iscaused bytherabiesvirus, which is typicallytransmitted through the bite or scratch of an infected animal, most commonly
+dogs, bats, raccoons, and skunks.
+- Symptoms: Initialsymptoms of rabies mayresembletheflu and includefever, headache, and weakness. As thevirus progresses, it af ects the
+central nervous system, leading to symptoms such as anxiety,confusion, hallucinations,excessive drooling, dif icultyswallowing, and even
+paralysis.
+- Remedies: Oncesymptoms appear, rabies is almost always fatal. However, immediate medical attention iscrucial afterexposureto potentially
+infected animals. Post-exposure prophylaxis (PEP) involves a series of vaccines and immunoglobulin injections to prevent thevirus from
+spreading in the body.
+Lupus:
+- Causes: Theexact cause of lupus is unknown, but it is believed to be a result of a combination of genetic,environmental, and hormonal
+factors.
+- Symptoms: Symptoms of lupusvary widely but often includefatigue, joint pain/swelling, skin rashes (particularly on theface),chest pain, hair
+loss, sensitivityto sunlight, and fever. In severecases, lupuscan af ect major organs such as thekidneys, heart, or brain.
+- Remedies: Whilethereis no curefor lupus, its symptomscan be managed. Treatment mayinvolve anti-inflammatory drugs, steroids, immunesuppressing medications, and lifestyle modifications such as sun protection and stress reduction. Regular medicalcheck-ups areessential to
+monitor thecondition.
+Alzheimer's disease:
+- Causes: Alzheimer's diseaseis not fully understood, but it is associated with a buildup of amyloid plaques and tau tangles in the brain, which
+disrupt normal brain function. Geneticfactors, aging, and variousenvironmental factors are believed to beinvolved in its development.
+- Symptoms: Alzheimer's is a progressive neurodegenerative disorder,characterized by memoryloss,confusion, disorientation, language
+dif iculties, mood swings, and eventually, dif iculties with basic daily activities.
+- Remedies: Unfortunately, thereiscurrently no curefor Alzheimer's disease. However, some medicationscan help managesymptoms and slow
+down the progression of the disease. Additionally, lifestyle modifications that focus on physical and mentalexercise, a healthy diet, social
+engagement, and avoiding smoking and excessive alcoholconsumption are believed to have a positiveimpact on thecondition. Support and
+carefrom family members orcaregivers arecrucial for Alzheimer's patients</p>
+  </div>
+</div>
