@@ -1,4 +1,4 @@
-.head{
+/* .head{
   background-image: url('<%= wicked_pdf_asset_base64("pdf_background.jpg") %>');
   height:200px;
   display:flex;
@@ -12,4 +12,105 @@
 .right-head{
   display:flex;
 background-color:green;
+} */
+
+/* pet_report.css */
+
+.head {
+  background-image: url('<%= wicked_pdf_asset_base64("pdf_background.jpg") %>');
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.left-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000;
+  margin: 10px;
+}
+
+.right-head {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  margin: 10px;
+}
+
+.boody-head {
+  padding: 10px;
+  color: white;
+  font-family: "Playpen Sans";
+  font-size: 30px;
+  background-color: teal;
+}
+/* pet_report.css */
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.two-column-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.left-column {
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #000;
+}
+
+.right-column {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+}
+
+.c2{
+  margin-top: 140px; /* Adjust the margin-top as needed to move the image down */
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Playpen Sans";
+}
+
+.boody-head {
+  background-color: teal;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.details-table td {
+  padding: 5px;
+}
+
+.details-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.details-table td:first-child {
+  font-weight: bold;
 }

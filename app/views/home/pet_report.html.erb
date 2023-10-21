@@ -1,44 +1,50 @@
-<%=wicked_pdf_stylesheet_link_tag 'pet_report' %>
-<style>
-  .head{
-    background-image: url('<%= wicked_pdf_asset_base64("pdf_background.jpg") %>');
-    height:200px;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-  }
-  .boody{
-    margin-top: 220px;
-    margin-bottom: 80px;
-    margin-left: 80px;
-    margin-right: 80px;
-  }
-  .boody-head{
-    padding: 5px;
-    padding-left:15px;
-    color:white;
-    font-family:"Playpen Sans";
-    font-size:30px;
-    background-color: teal;
-  }
-</style>
+<%= wicked_pdf_stylesheet_link_tag 'pet_report' %>
+<div class="container">
   <div class="head">
-  <%=  image_tag wicked_pdf_asset_base64("header2.png"),style:"height:350px;"%>
+    <%= image_tag wicked_pdf_asset_base64("header2.png"), style: "height: 350px;" %>
   </div>
-  <div class="boody">
-   <div class="boody-head">
-     Pet Details
-   </div>
-   <div class="boody-left">
-     <img src=<%= @image%> style="height:400px;width:400px;padding-top:20px;">
-   </div>
-   <div class="pet information">
-    Pet Name : <%= @name %> <br>
-    Pet Age : <%= @age %> <br>
-    Pet Activity : <%= @activity %> <br>
-    Pet Breed : <%= @breed %> <br>
-    Pet Weight : <%= @weight %> <br>
-    Pet Food Needed : <%= @dogcups %><br>
+</div>
+
+<div class="container c2">
+  <table class="two-column-table">
+    <tr>
+      <td class="left-column">
+        <img src="<%= @image %>" style="height:400px;width:400px;">
+      </td>
+      <td class="right-column">
+        <table class="details-table">
+          <tr>
+            <th colspan="2" class="boody-head">Pet Details</th>
+          </tr>
+          <tr>
+            <td>Pet Name:</td>
+            <td><%= @name %></td>
+          </tr>
+          <tr>
+            <td>Pet Age:</td>
+            <td><%= @age %></td>
+          </tr>
+          <tr>
+            <td>Pet Activity:</td>
+            <td><%= @activity %></td>
+          </tr>
+          <tr>
+            <td>Pet Breed:</td>
+            <td><%= @breed %></td>
+          </tr>
+          <tr>
+            <td>Pet Weight:</td>
+            <td><%= @weight %></td>
+          </tr>
+          <tr>
+            <td>Pet Food Needed:</td>
+            <td><%= @dogcups %></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<div class="pet information">
     Best suggested food for pet : <%= @dognutrition %><br>
     Symptoms of rabies : <%= @symptom1 %> <br>
     Causes of rabies : <%= @cause1 %> <br>
