@@ -1,84 +1,52 @@
-<section class="container">
-  <!-- <img src="https://images.unsplash.com/photo-1625558298116-38f0173a522c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" class="image" /> -->
-  <img src="/assets/dog6.jpg" alt="" class="image">
-  <header>Pet Helper are arriving soon!!!</header>
-  <!-- <p>
-    We are excited to announce that we will be launching soon and can't wait to share our new platform with you.
-  </p> -->
-  <div class="email-content">
-    <p><b>Enter your pet details :</b></p>
-      <%=  form_with(url: home_show_path(format: :pdf), method: :get) do |form| %>
-      <div class="input-box">
-        <%= form.label :image, "Pet Image :"%>
-        <%= form.file_field :image %>
-      </div>
-  <div class="input-box">
-    <%= form.label :name, "Pet Name :" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="input-box">
-    <%= form.label :age, "Pet Age :" %>
-    <%= form.number_field :age %>
-  </div>
-
-  <div class="input-box">
-  <%= form.label :breed, "Pet Breed:" %>
-  <%= form.select :breed, options_for_select([
-    ["Australian Shepherd", "Australian Shepherd"],
-    ["Basset Hound", "Basset Hound"],
-    ["Bernedoodle", "Bernedoodle"],
-    ["Bichon Frise", "Bichon Frise"],
-    ["Boston Terrier", "Boston Terrier"],
-    ["Boxer", "Boxer"],
-    ["Boykin Spaniel", "Boykin Spaniel"],
-    ["Cairn Terrier", "Cairn Terrier"],
-    ["Cane Corso", "Cane Corso"],
-    ["Cane Corso Puppy", "Cane Corso Puppy"],
-    ["Catahoula Leopard", "Catahoula Leopard"],
-    ["Chihuahua", "Chihuahua"],
-    ["Corgi", "Corgi"],
-    ["Dachshund", "Dachshund"],
-    ["Doberman Pinscher", "Doberman Pinscher"],
-    ["French Bulldog", "French Bulldog"],
-    ["German Shepherd", "German Shepherd"],
-    ["Golden Retriever", "Golden Retriever"],
-    ["Goldendoodle", "Goldendoodle"],
-    ["Havanese", "Havanese"],
-    ["Jack Russell", "Jack Russell"],
-    ["Labradoodle", "Labradoodle"],
-    ["Labrador Retriever", "Labrador Retriever"],
-    ["Maltese", "Maltese"],
-    ["Miniature Schnauzer", "Miniature Schnauzer"],
-    ["Pitbull", "Pitbull"],
-    ["Pomeranian", "Pomeranian"],
-    ["Rottweiler Puppy", "Rottweiler Puppy"],
-    ["Shiba Inu", "Shiba Inu"],
-    ["Shih Tzu", "Shih Tzu"],
-    ["Siberian Husky", "Siberian Husky"],
-    ["Weimaraner", "Weimaraner"],
-    ["Vizsla", "Vizsla"],
-    ["Yorkie", "Yorkie"]
-  ]), {}, class: "custom-dropdown" %>
+<%= stylesheet_link_tag 'front'%>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div id="loader">
+  <br><br>
+  <center><h3>Wait while,<br> Your online vet is checking your pet!</h3><center>
+<br><br><br><br><br><br><br><br><br><br><br>
+Till then increase your knowledge about your pet <br><br>
+ <button id="myButton" class="button-53" role="button">Get Facts</button>
+ <br>
+  <b><div id="apiResponse"></div></b>
 </div>
 
-
-
-  <div class="input-box">
-    <%= form.label :weight, "Pet Weight :" %>
-    <%= form.number_field :weight, step: 'any' %>
-  </div>
-
-  <div class="input-box">
-    <%= form.label :activity, "Pet Activity :" %>
-    <%= form.select :activity, options_for_select([["Typical", "Typical"], ["Active", "Active"], ["Overweight", "Overweight"],
-     ["Overweight", "Overweight"], ["Highly Active", "Highly Active"], ["Senior, neutered, inactive", "Senior, neutered, inactive"],
-     ["Working Dog (light duty)", "Working Dog (light duty)"], ["Working Dog (moderate duty)", "Working Dog (moderate duty)"], ["Working Dog (heavy duty)", "Working Dog (heavy duty)"],]), {}, class: "custom-dropdown" %>
-  </div>
-
-
-  <%= form.submit "Submit", class:'btn btn-rounded subtn' %>
-  <br>
-<% end %>
-  </div>
+<section class="contain">
+<div class="inside">
+<h1><b><%= image_tag 'logo.png' ,style:"border-radius:50%;width:180px;" %>Devs 'N' Revs Care</b></h1>
+</div>
 </section>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    var loader = document.getElementById("loader");
+    loader.style.display = "none";
+  });
+  var factsFetched = false; // Flag to track whether facts have been fetched
+
+  function fetchDogFact() {
+    $.ajax({
+      url: '/fetch_dog_facts', // Route to your controller action
+      method: 'GET',
+      success: function (data) {
+        $('#apiResponse').text('"' + data + '"'); // Update the content with the new dog fact
+      },
+      error: function (error) {
+        console.error('Error fetching dog fact:', error);
+      }
+    });
+  }
+
+  // Attach a click event listener to the button
+  $('#myButton').on('click', function () {
+    if (!factsFetched) { // Check if facts have not been fetched yet
+      fetchDogFact(); // Fetch dog fact for the first time when the button is clicked
+      factsFetched = true; // Set the flag to indicate that facts have been fetched
+    }
+  });
+
+  // Call fetchDogFact every 7 seconds after the first button click
+  setInterval(function () {
+    if (factsFetched) { // Check if facts have been fetched
+      fetchDogFact();
+    }
+  }, 7000);
+</script>

@@ -7,5 +7,5 @@ get 'home/show.pdf', to: 'home#show', format: 'pdf'
    get 'home/index'
    root "home#index"
 
-
+ get 'fetch_dog_facts', to: 'home#fetch_dog_facts'
 end

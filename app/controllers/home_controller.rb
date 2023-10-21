@@ -6,6 +6,10 @@ class HomeController < ApplicationController
   redirect_to home_show_path(name: params[:name], age: params[:age], breed: params[:breed], weight: params[:weight], activity: params[:activity], format: :pdf)
   end
 
+  def fetch_dog_facts
+    response = HTTParty.get('http://dog-api.kinduff.com/api/facts?raw=true')
+    render plain: response.body
+  end
   def show
     @name= params[:name]
     @age= params[:age]
