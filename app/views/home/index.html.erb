@@ -101,7 +101,7 @@ Till then increase your knowledge about your pet <br><br>
  ]), {}, class: "custom-dropdown" %>
 </div>
 
-        <%= form.submit "Submit", class: 'button-52' %>
+        <%= form.submit "Submit", class: 'button-52', id:'loaderstart' %>
       <% end %>
     </div>
 
@@ -143,6 +143,15 @@ Till then increase your knowledge about your pet <br><br>
     }
   });
 
+  // Attach a click event listener to the button
+  $('#loaderstart').on('click', function () {
+    var loader = document.getElementById("loader");
+    loader.style.display = "flex";
+    // if (!factsFetched) { // Check if facts have not been fetched yet
+    //   fetchDogFact(); // Fetch dog fact for the first time when the button is clicked
+    //   factsFetched = true; // Set the flag to indicate that facts have been fetched
+    // }
+  });
   // Call fetchDogFact every 7 seconds after the first button click
   setInterval(function () {
     if (factsFetched) { // Check if facts have been fetched
