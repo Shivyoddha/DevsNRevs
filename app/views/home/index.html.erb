@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag 'front'%>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <div class="background">
+  </div>
 <div id="loader">
   <br><br>
   <center><h3>Wait while,<br> Your online vet is checking your pet!</h3><center>
@@ -12,84 +14,104 @@ Till then increase your knowledge about your pet <br><br>
 
 <section class="contain">
 <div class="inside">
-<h1><b><%= image_tag 'logo.png' ,style:"border-radius:50%;width:180px;" %>Devs 'N' Revs Care</b></h1>
-
-<p><b>Enter your pet details :</b></p>
-  <%=  form_with(url: home_show_path(format: :pdf), method: :get) do |form| %>
-  <div class="input-box">
-    <%= form.label :image, "Pet Image :"%>
-    <%= form.file_field :image %>
-  </div>
-<div class="input-box">
-<%= form.label :name, "Pet Name :" %>
-<%= form.text_field :name %>
+<div class="top">
+  <%= image_tag 'logo.png',style:"width:200px;border-radius:10%;border-bottom-right-radius:10%;border-top-left-radius:10%;position:absolute;bottom:80%;right:80%;"%>
+  <h1><b>
+    <div style="width:100%;height:100%;font-family:'Playpen Sans',cursive;padding:30px;color:white; text-shadow: 0 0 3px #12486B, 0 0 5px #0000FF;">
+      Devs 'N' Revs CARE
+    </div>
+    </b></h1>
+</div>
+  <div class="bottom">
+ <!-- Bottom starts -->
+  <%# <%= image_tag 'dog_doctor2.png',class:"dogdoctor" ,style:"width:50%;position:absolute;bottom:9%;right:80%;"%>
+<div class="left-part">
 </div>
 
-<div class="input-box">
-<%= form.label :age, "Pet Age :" %>
-<%= form.number_field :age %>
+<div class="right-part">
+
+  <div class="">
+    <p><b>Enter your pet details :</b></p>
+    <div class="formy">
+      <%= form_with(url: home_show_path(format: :pdf), method: :get) do |form| %>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Pet Image :</span>
+          <%= form.file_field :image, class: "form-control" %>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Pet Name :</span>
+          <%= form.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Pet Age :</span>
+          <%= form.number_field :age, class: "form-control" %>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Pet Weight :</span>
+          <%= form.number_field :weight, step: 'any', class: "form-control" %>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Pet Ac :</span>
+          <%= form.select :activity, options_for_select([["Typical", "Typical"], ["Active", "Active"], ["Overweight", "Overweight"],
+      ["Overweight", "Overweight"], ["Highly Active", "Highly Active"], ["Senior, neutered, inactive", "Senior, neutered, inactive"],
+      ["Working Dog (light duty)", "Working Dog (light duty)"], ["Working Dog (moderate duty)", "Working Dog (moderate duty)"], ["Working Dog (heavy duty)", "Working Dog (heavy duty)"],]), {}, class: "custom-dropdown" %>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Pet Breed :</span>
+          <%= form.select :breed, options_for_select([
+   ["Australian Shepherd", "Australian Shepherd"],
+   ["Basset Hound", "Basset Hound"],
+   ["Bernedoodle", "Bernedoodle"],
+   ["Bichon Frise", "Bichon Frise"],
+   ["Boston Terrier", "Boston Terrier"],
+   ["Boxer", "Boxer"],
+   ["Boykin Spaniel", "Boykin Spaniel"],
+   ["Cairn Terrier", "Cairn Terrier"],
+   ["Cane Corso", "Cane Corso"],
+   ["Cane Corso Puppy", "Cane Corso Puppy"],
+   ["Catahoula Leopard", "Catahoula Leopard"],
+   ["Chihuahua", "Chihuahua"],
+   ["Corgi", "Corgi"],
+   ["Dachshund", "Dachshund"],
+   ["Doberman Pinscher", "Doberman Pinscher"],
+   ["French Bulldog", "French Bulldog"],
+   ["German Shepherd", "German Shepherd"],
+   ["Golden Retriever", "Golden Retriever"],
+   ["Goldendoodle", "Goldendoodle"],
+   ["Havanese", "Havanese"],
+   ["Jack Russell", "Jack Russell"],
+   ["Labradoodle", "Labradoodle"],
+   ["Labrador Retriever", "Labrador Retriever"],
+   ["Maltese", "Maltese"],
+   ["Miniature Schnauzer", "Miniature Schnauzer"],
+   ["Pitbull", "Pitbull"],
+   ["Pomeranian", "Pomeranian"],
+   ["Rottweiler Puppy", "Rottweiler Puppy"],
+   ["Shiba Inu", "Shiba Inu"],
+   ["Shih Tzu", "Shih Tzu"],
+   ["Siberian Husky", "Siberian Husky"],
+   ["Weimaraner", "Weimaraner"],
+   ["Vizsla", "Vizsla"],
+   ["Yorkie", "Yorkie"]
+ ]), {}, class: "custom-dropdown" %>
 </div>
 
-<div class="input-box">
-<%= form.label :breed, "Pet Breed:" %>
-<%= form.select :breed, options_for_select([
-["Australian Shepherd", "Australian Shepherd"],
-["Basset Hound", "Basset Hound"],
-["Bernedoodle", "Bernedoodle"],
-["Bichon Frise", "Bichon Frise"],
-["Boston Terrier", "Boston Terrier"],
-["Boxer", "Boxer"],
-["Boykin Spaniel", "Boykin Spaniel"],
-["Cairn Terrier", "Cairn Terrier"],
-["Cane Corso", "Cane Corso"],
-["Cane Corso Puppy", "Cane Corso Puppy"],
-["Catahoula Leopard", "Catahoula Leopard"],
-["Chihuahua", "Chihuahua"],
-["Corgi", "Corgi"],
-["Dachshund", "Dachshund"],
-["Doberman Pinscher", "Doberman Pinscher"],
-["French Bulldog", "French Bulldog"],
-["German Shepherd", "German Shepherd"],
-["Golden Retriever", "Golden Retriever"],
-["Goldendoodle", "Goldendoodle"],
-["Havanese", "Havanese"],
-["Jack Russell", "Jack Russell"],
-["Labradoodle", "Labradoodle"],
-["Labrador Retriever", "Labrador Retriever"],
-["Maltese", "Maltese"],
-["Miniature Schnauzer", "Miniature Schnauzer"],
-["Pitbull", "Pitbull"],
-["Pomeranian", "Pomeranian"],
-["Rottweiler Puppy", "Rottweiler Puppy"],
-["Shiba Inu", "Shiba Inu"],
-["Shih Tzu", "Shih Tzu"],
-["Siberian Husky", "Siberian Husky"],
-["Weimaraner", "Weimaraner"],
-["Vizsla", "Vizsla"],
-["Yorkie", "Yorkie"]
-]), {}, class: "custom-dropdown" %>
+        <%= form.submit "Submit", class: 'button-52' %>
+      <% end %>
+    </div>
 
-<div class="input-box">
-  <%= form.label :weight, "Pet Weight :" %>
-  <%= form.number_field :weight, step: 'any' %>
+
 </div>
 
-<div class="input-box">
-  <%= form.label :activity, "Pet Activity :" %>
-  <%= form.select :activity, options_for_select([["Typical", "Typical"], ["Active", "Active"], ["Overweight", "Overweight"],
-   ["Overweight", "Overweight"], ["Highly Active", "Highly Active"], ["Senior, neutered, inactive", "Senior, neutered, inactive"],
-   ["Working Dog (light duty)", "Working Dog (light duty)"], ["Working Dog (moderate duty)", "Working Dog (moderate duty)"], ["Working Dog (heavy duty)", "Working Dog (heavy duty)"],]), {}, class: "custom-dropdown" %>
+ <!-- Bottom ends -->
 </div>
 
-
-<%= form.submit "Submit", class:'btn btn-rounded subtn' %>
-<br>
-<% end %>
 </div>
-
-
-
-
 
 </div>
 </section>

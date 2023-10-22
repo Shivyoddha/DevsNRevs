@@ -1,11 +1,23 @@
 .contain{
+  display:flex;
   height:100vh;
   width:100%;
-  background-image: url(front.png);
   background-repeat: no-repeat;
   background-size: cover;
-
+  justify-content: center;
+  align-items: center;
 }
+
+.background{
+  position:absolute;
+  z-index:-10;
+  background-image: url(front.png);
+  background-size: cover;
+  height:100vh;
+  width:100%;
+  filter:brightness(80%);
+}
+
 .input-box{
   margin:0 auto;
   width:auto;
@@ -40,34 +52,8 @@ height: 100%;
 }
 }
 
-.input-boxy{
-    height: 520px;
-    width: 400px;
-    background-color: rgba(255,255,255,0.13);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 60%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
-}
+.formy{
 
-.input-boxy1{
-    height: 520px;
-    width: 400px;
-    background-color: rgba(255,255,255,0.13);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 38%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
 }
 
 .button-53 {
@@ -133,11 +119,87 @@ height: 100%;
 
 .inside{
   display:flex;
+  flex-direction: column;
   background-color: rgba(255,255,255,0.13);
   backdrop-filter: blur(10px);
-  height:500px;
-  width:600px;
+  height:550px;
+  width:750px;
   margin:0 auto;
-  box-shadow: 0 0 40px rgba(8,7,16,0.6);
-  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(8,7,16,0.8);
+
+  filter: brightness(1);
+}
+
+
+.top{
+  display: flex;
+  z-index:20;
+  height:100%;
+  background-color: rgba(255,255,255,0.13);
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom{
+  display: flex;
+  height:100%;
+  width:100%;
+
+
+}
+
+.left-part{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255,255,255,0.13);
+  width:100%;
+  flex-grow: 1;
+}
+
+.right-part{
+  background-color:  rgba(255,255,255,0.13);
+  width:100%;
+  flex-grow: 1;
+}
+
+
+.button-52 {
+  z-index:40;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+.dogdoctor{
+  transform:rotateZ(-30deg);
+}
+
+.dogdoctor:hover{
+  transform:rotateZ(-45deg);
 }
