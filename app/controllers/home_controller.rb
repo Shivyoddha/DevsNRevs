@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
 
   def submit_form
-  redirect_to home_show_path(name: params[:name], age: params[:age], breed: params[:breed], weight: params[:weight], activity: params[:activity], format: :pdf)
+  redirect_to home_show_path(name: params[:name], age: params[:age], breed: params[:breed], weight: params[:weight], activity: params[:activity],gender: params[:gender], color: params[:color], format: :pdf)
   end
 
   def fetch_dog_facts
@@ -16,6 +16,7 @@ class HomeController < ApplicationController
     @breed= params[:breed]
     @weight= params[:weight]
     @activity= params[:activity]
+    @gender= params[:gender]
     @image = RandomDog.get_random_image
     dogfood = DogFood.new
     @dogcups = dogfood.query(@activity, @weight)

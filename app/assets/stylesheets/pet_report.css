@@ -129,17 +129,15 @@ img {
 }
 
 .pet.information .best-suggested-food {
-    font-family: "Georgia";
-    font-style: italic;
+    font-family: 'Poppins', sans-serif;
 }
 
 .cups .best-suggested-food {
-  font-family: 'Poppins';
-    /* font-style: italic; */
+  font-family: 'Poppins', sans-serif;
 }
 
 .best-suggested-food{
-  font-family: "Georgia";
+  font-family: 'Poppins', sans-serif;
 }
 .pet.information2 {
     background-color: #f0f0f0;
@@ -147,7 +145,7 @@ img {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 10px;
-    font-family: "Garamond";
+    font-family: 'Poppins', sans-serif;
 }
 
 .cups{
