@@ -94,3 +94,118 @@
   z-index:1;
   -webkit-transform: rotate(-8deg)
 }
+
+.right-head{
+  display: inline;
+  color: #black;
+  font-size: 30px;
+}
+
+.right-box1-text{
+  padding-left : 6px;
+}
+
+.right-box1-subhead{
+  color: #black;
+  font-size: 26px;
+  text-align: center;
+}
+
+.right-box1{
+  padding-left: 0%;
+  padding-bottom: 25%;
+  justify-content: center;
+}
+.right-box1-left{
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  justify-content: center;
+
+}
+.right-box1-center{
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+.right-box1-right{
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+
+.right-box1-box2-head{
+  display:inline;
+  color: #black;
+  font-size: 20px;
+}
+
+.pdf-bullet-small{
+  display:inline;
+  position: relative;
+  width: 25px;
+  margin-left: 5px;
+}
+
+.right-box1-box2{
+  background-color: white;
+  margin: 6px;
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+
+.example {
+  text-align: center;
+}
+
+.pie {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #eee;
+  background-image: linear-gradient(to right, transparent 50%, #4CC9D8 0);
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.pie::before {
+  content: '';
+  display: block;
+  margin-left: 50%;
+  height: 100%;
+  border-radius: 0 100% 100% 0 / 50%;
+  background-color: inherit;
+  transform-origin: left;
+}
+
+.pie::after {
+  content: attr(data-value);
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #A0E9FF;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  font: 900 20px/41px Tahoma;
+}
+
+@for $i from 0 through 50 {
+  .pie[data-value="#{$i}"]:before {
+    transform: rotate(#{$i/100}turn);
+  }
+}
+
+@for $i from 51 through 100 {
+  .pie[data-value="#{$i}"]:before {
+    background-color: #4CC9D8;
+    transform: rotate(#{$i/100 - .5}turn);
+  }
+}
