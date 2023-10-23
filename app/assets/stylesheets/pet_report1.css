@@ -1,0 +1,96 @@
+.div0{
+ background-color:white;
+ width:100%;
+ padding-left: 4%;
+ padding-top: 3%;
+ padding-right: 5%;
+ padding-bottom: 3%;
+ z-index:10;
+}
+.div1, .div2 {
+  width: 50%;
+  float: left;
+}
+
+.div1{
+  background-color:white;
+  font-family: "Tilt Neon";
+}
+
+.div2{
+  padding:5px;
+  background-color: #A0E9FF;
+  font-family: "Tilt Neon";
+}
+
+.heading{
+  z-index:-1;
+  font-family: "Tilt Neon";
+}
+
+.pdf-bullet{
+  display:inline;
+  position: relative;
+  bottom: 3.5px;
+  width: 40px;
+  margin-left: 2px;
+}
+
+.left-head{
+  display: inline;
+  color: #00A9FF;
+  font-size: 30px;
+}
+
+.left-box1{
+  padding-left: 5%;
+  padding-bottom: 25%;
+}
+
+.left-box2{
+  padding-left: 5%;
+  padding-bottom: 5%;
+}
+
+.left-box1-left{
+  width: 40%;
+  float: left;
+}
+
+.left-box1-right{
+  width: 60%;
+  float: left;
+}
+
+.left-box2-text{
+  display:inline;
+}
+
+.left-box2-first{
+  width: 28%;
+  float: left;
+}
+
+.left-box2-second{
+  width: 80px;
+  float: left;
+  color:black;
+}
+
+.watermark{
+  position:fixed;
+  top:30%;
+  left:12%;
+  z-index:50;
+}
+
+.design{
+  background-color: orange;
+  height:1000px;
+  width:2000px;
+  position: fixed;
+  right:5%;
+  bottom:92%;
+  z-index:1;
+  -webkit-transform: rotate(-8deg)
+}
