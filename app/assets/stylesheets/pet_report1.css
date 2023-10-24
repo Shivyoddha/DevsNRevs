@@ -102,13 +102,15 @@
 }
 
 .right-box1-text{
-  padding-left : 6px;
+  padding-left : 28px;
+  padding-right: 1px;
 }
 
 .right-box1-subhead{
   color: #black;
   font-size: 26px;
   text-align: center;
+  font-weight: bold;
 }
 
 .right-box1{
@@ -160,7 +162,8 @@
   text-align: center;
 }
 
-.pie {
+.pie{
+  content: attr(data-value);
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -169,16 +172,6 @@
   position: relative;
   display: inline-block;
   margin: 10px;
-}
-
-.pie::before {
-  content: '';
-  display: block;
-  margin-left: 50%;
-  height: 100%;
-  border-radius: 0 100% 100% 0 / 50%;
-  background-color: inherit;
-  transform-origin: left;
 }
 
 .pie::after {
