@@ -71,7 +71,7 @@
            Activity
       </div>
       </div>
-      <div class="left-box2-first" style="font-size:19px;">
+      <div class="left-box2-first" style="font-size:19px;color:black">
         <div style="border:1px solid black;padding-left:10%;">
              Expected
         </div>
@@ -99,7 +99,7 @@
              Active
         </div>
       </div>
-      <div class="left-box2-second" style="font-size:19px;">
+      <div class="left-box2-second" style="font-size:19px;color:#00A9FF">
         <div style="border:1px solid black;padding-left:10%;">
              Status
         </div>
@@ -116,50 +116,55 @@
       </div>
   </div>
 <br>
-  <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet",style:"bottom:5px;" %>
-  <div class="left-head" style="color:black;">
-    Breed Based Food Tips
-    <center><hr style="border-top: 2px solid black;width:90%;"></center>
+  <div class="left-box-3" >
+    <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet",style:"bottom:5px;" %>
+    <div class="right-head">
+      Diagnosis
+      <center><hr style="border-top: 2px solid black;width:90%;"></center>
+    </div>
+    <div class="right-box1-text">
+      The findings of the diagnosis indicate the possible diseases that your dog could have below:
+    </div>
+    <br>
+    <div class="right-box1-subhead">
+      Rabies
+      </div>
+      <div class="right-box1">
+        <div class="right-box1-left" style="font-size:15px;">
+         3 of every 5 dogs affected <br>
+         <div class="example">
+           <div class="pie" data-value="60" style="background-color:green"></div>
+           </div>
+        </div>
+        <div class="right-box1-center" style="font-size:15px;">
+         3 of every 5 goldern retrievers affected<br>
+         <div class="example">
+           <div class="pie" data-value="60" style="background-color:blue"></div>
+           </div>
+        </div>
+        <div class="right-box1-right" style="font-size:15px;">
+         Severity of the disease<br>
+         <div class="example">
+           <div class="pie" data-value="60" style="background-color:orange"></div>
+           </div>
+        </div>
+      </div>
+  <br>
   </div>
+
 
 </div>
 
 <div class="div2" style="height:1160px;">
-  <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet",style:"bottom:5px;" %>
-  <div class="right-head">
-    Diagnosis
-    <center><hr style="border-top: 2px solid black;width:90%;"></center>
-  </div>
-  <div class="right-box1-text">
-    The findings of the diagnosis indicate the possible diseases that your dog could have below:
-  </div>
-  <div class="right-box1-subhead">
-    Rabies:
-    </div>
-    <div class="right-box1">
-      <div class="right-box1-left" style="font-size:15px;">
-       3 of every 5 dogs affected <br>
-       <div class="example">
-         <div class="pie" data-value="60"></div>
 
-         </div>
-      </div>
-      <div class="right-box1-center" style="font-size:15px;">
-       3 of every 5 goldern retrievers affected<br>
-      </div>
-      <div class="right-box1-right" style="font-size:15px;">
-       Severity <br>
-      </div>
-    </div>
-    <br>
     <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
     <div class="right-box1-box2-head">
       Causes
     </div>
     <div class="right-box1-box2">
-      1. **Viral Infection**
-2. **Animal Hosts**
-3. **Neurotropic Virus**:
+      Viral Infection: Rabies is caused by a virus called Lyssavirus, mainly transmitted through animal bites.<br>
+      Animal Hosts: Common animal carriers of rabies include dogs, bats, and raccoons.<br>
+      Neurotropic Virus: The virus has an affinity for nerve cells, leading to central nervous system symptoms.<br>
     </div>
 
     <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
@@ -167,39 +172,45 @@
       Symptoms
     </div>
     <div class="right-box1-box2" style="background-color:orange">
-      1. **Viral Infection**
-2. **Animal Hosts**
-3. **Neurotropic Virus**:
+      Early Symptoms: Fever, headache, and discomfort. <br>
+      Neurological Symptoms: Anxiety, confusion, hallucinations, hydrophobia, and paralysis. <br>
+      Later Stages: Coma, seizures, and death if not treated promptly with rabies vaccine. <br>
     </div>
     <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
     <div class="right-box1-box2-head">
       Remedies
     </div>
     <div class="right-box1-box2">
-      1. **Viral Infection**
-2. **Animal Hosts**
-3. **Neurotropic Virus**:
+      Post-Exposure Prophylaxis: Immediate rabies vaccine and rabies immune globulin (RIG). <br>
+      Pre-Exposure Vaccination: For individuals at higher risk, like veterinarians. <br>
+      Avoidance of Animal Bites: Practicing caution around animals, especially wildlife. <br>
     </div>
+<br>
+
 
 
 
     <div class="right-box1-subhead">
-      Alzheimers:
+      Rabies
       </div>
       <div class="right-box1">
         <div class="right-box1-left" style="font-size:15px;">
          3 of every 5 dogs affected <br>
+         <div class="example">
+           <div class="pie" data-value="60" style="background-color:green"></div>
+           </div>
         </div>
-
-
-
-
-
         <div class="right-box1-center" style="font-size:15px;">
          3 of every 5 goldern retrievers affected<br>
+         <div class="example">
+           <div class="pie" data-value="60" style="background-color:blue"></div>
+           </div>
         </div>
         <div class="right-box1-right" style="font-size:15px;">
-         Severity <br>
+         Severity of the disease<br>
+         <div class="example">
+           <div class="pie" data-value="60" style="background-color:orange"></div>
+           </div>
         </div>
       </div>
       <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
@@ -207,9 +218,9 @@
         Causes
       </div>
       <div class="right-box1-box2">
-        1. **Viral Infection**
-    2. **Animal Hosts**
-    3. **Neurotropic Virus**:
+        Viral Infection: Rabies is caused by a virus called Lyssavirus, mainly transmitted through animal bites.<br>
+        Animal Hosts: Common animal carriers of rabies include dogs, bats, and raccoons.<br>
+        Neurotropic Virus: The virus has an affinity for nerve cells, leading to central nervous system symptoms.<br>
       </div>
 
       <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
@@ -217,22 +228,24 @@
         Symptoms
       </div>
       <div class="right-box1-box2" style="background-color:orange">
-        1. **Viral Infection**
-    2. **Animal Hosts**
-    3. **Neurotropic Virus**:
+        Early Symptoms: Fever, headache, and discomfort. <br>
+        Neurological Symptoms: Anxiety, confusion, hallucinations, hydrophobia, and paralysis. <br>
+        Later Stages: Coma, seizures, and death if not treated promptly with rabies vaccine. <br>
       </div>
       <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
       <div class="right-box1-box2-head">
         Remedies
       </div>
       <div class="right-box1-box2">
-        1. **Viral Infection**
-    2. **Animal Hosts**
-    3. **Neurotropic Virus**:
+        Post-Exposure Prophylaxis: Immediate rabies vaccine and rabies immune globulin (RIG). <br>
+        Pre-Exposure Vaccination: For individuals at higher risk, like veterinarians. <br>
+        Avoidance of Animal Bites: Practicing caution around animals, especially wildlife. <br>
       </div>
 
+
+
 <div class="">
-  <%=  wicked_pdf_image_tag 'stamp.png' ,style:"width:150px;position:fixed;top:87%;left:80%;border-radius:10px;z-index:30;"%>
+  <%=  wicked_pdf_image_tag 'stamp.png' ,style:"width:150px;position:fixed;top:87%;left:80%;border-radius:10px;z-index:30;opacity: 0.5;"%>
 </div>
 <div class="watermark">
   <%=  wicked_pdf_image_tag 'logo.png' ,style:"border:none;border-radius:50%;width:200%;opacity: 0.1;"%>

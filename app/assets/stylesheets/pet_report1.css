@@ -129,7 +129,7 @@
   text-align: center;
 }
 .right-box1-right{
-  width: 33.33%;
+  width: 30%;
   float: left;
   text-align: center;
 }
@@ -169,6 +169,7 @@
   position: relative;
   display: inline-block;
   margin: 10px;
+
 }
 
 .pie::before {
@@ -179,6 +180,7 @@
   border-radius: 0 100% 100% 0 / 50%;
   background-color: inherit;
   transform-origin: left;
+
 }
 
 .pie::after {
@@ -195,6 +197,7 @@
   bottom: 0;
   text-align: center;
   font: 900 20px/41px Tahoma;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%)
 }
 
 @for $i from 0 through 50 {
@@ -208,4 +211,12 @@
     background-color: #4CC9D8;
     transform: rotate(#{$i/100 - .5}turn);
   }
+}
+
+
+.left-box-3{
+  background-color: #A0E9FF;
+  margin-bottom: 0px;
+  margin-right:20px;
+
 }
