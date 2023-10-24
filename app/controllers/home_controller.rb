@@ -11,11 +11,11 @@ class HomeController < ApplicationController
     render plain: response.body
   end
   def show
-   #  @name= params[:name]
-   #  @age= params[:age]
-   #  @breed= params[:breed]
-   #  @weight= params[:weight]
-   #  @activity= params[:activity]
+    @name= params[:name]
+    @age= params[:age]
+    @breed= params[:breed]
+    @weight= params[:weight]
+    @activity= params[:activity]
    #  @image = RandomDog.get_random_image
    #  dogfood = DogFood.new
    #  @dogcups = dogfood.query(@activity, @weight)
