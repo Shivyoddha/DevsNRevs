@@ -5,7 +5,7 @@ post 'home/submit_form', to: 'home#submit_form'
 get 'home/show.pdf', to: 'home#show', format: 'pdf'
   # Defines the root path route ("/")
    get 'home/index'
-   root "home#index"
+   root "home#landing"
  get 'home/landing'
  get 'home/pet_report1', to: 'home#pet_report1'
  get 'fetch_dog_facts', to: 'home#fetch_dog_facts'

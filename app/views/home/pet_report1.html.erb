@@ -18,13 +18,13 @@
   </div>
   <div class="left-box1">
     <div class="left-box1-left" style="font-size:19px;">
-     Name : Tommy <br>
-     Age : 3 years <br>
-     Weight: 50 lbs <br>
+     Name : <%= @name%> <br>
+     Age : <%= @age%> years <br>
+     Weight: <%= @weight%> lbs <br>
     </div>
     <div class="left-box1-right" style="font-size:19px;">
-     Breed : Labro <br>
-     Activity : Active <br>
+     Breed : <%= @breed%> <br>
+     Activity : <%= @activity%> <br>
      Age in (Human Years) : 12 years
     </div>
   </div>
@@ -76,7 +76,7 @@
              Expected
         </div>
         <div style="border:1px solid black;padding-left:10%;">
-             5kg-6kg
+             50lbs0-60lbs
         </div>
         <div style="border:1px solid black;padding-left:10%;">
              60cm-70cm
@@ -90,10 +90,10 @@
              Current
         </div>
         <div style="border:1px solid black;padding-left:10%;">
-             5.2kg
+             <%= @weight%> lbs
         </div>
         <div style="border:1px solid black;padding-left:10%;">
-             65cm
+             <%= @height%> cm
         </div>
         <div style="border:1px solid black;padding-left:10%;">
              Active
@@ -124,11 +124,11 @@
   <div class="pet information">
     <div style="text-align:center; justify-content:center"> The pet amount of pet food needed based on your pet's weight and activity:<div id="dogFoodImages">
       <br>
-      <% (1..5.round).each do |i| %>
+      <% (1..5).each do |i| %>
           <%= image_tag wicked_pdf_asset_base64("dogfoodani.png"), style: "height: 40px; width: 40px; margin:3px" %>
       <% end %>
 </div><br>
-    5 cups</div>
+    <%= @dogcups%> cups</div>
   </div>
 </div>
 

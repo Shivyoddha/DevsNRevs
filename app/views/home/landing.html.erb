@@ -7,9 +7,9 @@
   <h2 id="text"><span>Healthy Pets, Happy Hearts<br></span>Your Pet's Health Journey Starts Here!</h2>
 </section>
 <section class="about" style="background-color:black;">
-  <h2 id="text2">Devs 'N' Revs Care</h2>
-  <div class="contain">
-    <div class="lefty">
+  <h2 id="text2">Diagnos Your Pet</h2>
+  <div class="contain" id="second">
+    <div class="lefty" id="first">
     1)  Image Input: Users can upload images of their pets and provide additional details about the dog, including its name, age, breed, and activity level. This information helps in narrowing down the potential diseases.
 <br><br>
     2)  Machine Learning Model: Your input is then processed by a machine learning model that we've developed. This model has been trained on a comprehensive dataset that we prepared, ensuring high accuracy in disease detection.
@@ -38,17 +38,22 @@
             </div>
 
             <div class="input-group mb-3">
-              <span class="input-group-text">Pet Age :</span>
+              <span class="input-group-text">Pet Age (in years):</span>
               <%= form.number_field :age, class: "form-control" %>
             </div>
 
             <div class="input-group mb-3">
-              <span class="input-group-text">Pet Weight :</span>
+              <span class="input-group-text">Pet Weight (in lbs) :</span>
               <%= form.number_field :weight, step: 'any', class: "form-control" %>
             </div>
 
             <div class="input-group mb-3">
-              <span class="input-group-text">Pet Ac :</span>
+              <span class="input-group-text">Pet Height (in cm) :</span>
+              <%= form.number_field :height, step: 'any', class: "form-control" %>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Pet Activity :</span>
               <%= form.select :activity, options_for_select([["Typical", "Typical"], ["Active", "Active"], ["Overweight", "Overweight"],
           ["Overweight", "Overweight"], ["Highly Active", "Highly Active"], ["Senior, neutered, inactive", "Senior, neutered, inactive"],
           ["Working Dog (light duty)", "Working Dog (light duty)"], ["Working Dog (moderate duty)", "Working Dog (moderate duty)"], ["Working Dog (heavy duty)", "Working Dog (heavy duty)"],]), {}, class: "custom-dropdown" %>
