@@ -38,7 +38,7 @@
       <% @dognutrition = @dognutrition.gsub("\u2019", "'") %>
         <% points = @dognutrition.split('. ') %>
       <% points.each_slice(2) do |point_group| %>
-      <%=image_tag wicked_pdf_asset_base64 'pdf-bullet-golden.png',class:"pdf-bullet",style:"bottom:5px;" %>
+      <%=image_tag wicked_pdf_asset_base64('pdf-bullet-golden.png'),class:"pdf-bullet",style:"bottom:5px;" %>
         <%= point_group.join('. ') %><br>
       <% end %>
     </div>
@@ -131,7 +131,7 @@
 </div>
 
 <div class="div2" style="height:1190px;">
-  <%= image_tag wicked_pdf_asset_base64 'pdf-bullet.png',class:"pdf-bullet",style:"bottom:5px;" %>
+  <%= image_tag wicked_pdf_asset_base64('pdf-bullet.png'),class:"pdf-bullet",style:"bottom:5px;" %>
   <div class="right-head">
     Diagnosis
     <center><hr style="border-top: 2px solid black;width:90%;"></center>
@@ -195,7 +195,7 @@
       </div>
     </div>
 
-    <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
+    <%=image_tag wicked_pdf_asset_base64('pdf-bullet.png'),class:"pdf-bullet-small",style:"bottom:5px;" %>
     <div class="right-box1-box2-head">
       Causes
     </div>
@@ -209,7 +209,7 @@
 
     </div>
 
-    <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
+    <%= image_tag wicked_pdf_asset_base64('pdf-bullet.png'),class:"pdf-bullet-small",style:"bottom:5px;" %>
     <div class="right-box1-box2-head">
       Symptoms
     </div>
@@ -219,7 +219,7 @@
       Neurological Symptoms: Anxiety, confusion, hallucinations, hydrophobia, and paralysis. <br>
       Later Stages: Coma, seizures, and death if not treated promptly with rabies vaccine. <br>
     </div>
-    <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
+    <%= image_tag wicked_pdf_asset_base64('pdf-bullet.png'),class:"pdf-bullet-small",style:"bottom:5px;" %>
     <div class="right-box1-box2-head">
       Remedies
     </div>
@@ -232,10 +232,10 @@
 
 
 <div class="">
-  <%=  wicked_pdf_image_tag 'stamp.png' ,style:"width:150px;position:fixed;top:87%;left:80%;border-radius:10px;z-index:30;opacity: 0.5;"%>
+  <%= image_tag wicked_pdf_asset_base64( 'stamp.png') ,style:"width:150px;position:fixed;top:87%;left:80%;border-radius:10px;z-index:30;opacity: 0.5;"%>
 </div>
 <div class="watermark">
-  <%=  wicked_pdf_image_tag 'logo.png' ,style:"border:none;border-radius:50%;width:200%;opacity: 0.1;"%>
+  <%=  image_tag wicked_pdf_asset_base64( 'logo.png') ,style:"border:none;border-radius:50%;width:200%;opacity: 0.1;"%>
 </div>
 <div class="design" >
 </div>
