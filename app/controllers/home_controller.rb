@@ -11,18 +11,21 @@ class HomeController < ApplicationController
     render plain: response.body
   end
   def show
-     @name= params[:name]
-     @age= params[:age]
-     @breed= params[:breed]
-     @weight= params[:weight]
-     @activity= params[:activity]
-     @height= params[:height]
+    @name= params[:name]
+    @age= params[:age]
+    @breed= params[:breed]
+    @weight= params[:weight]
+    @activity= params[:activity]
+    @human_age = (16 * Math.log(@age.to_f) + 31).round
    #  @image = RandomDog.get_random_image
-     dogfood = DogFood.new
-     @dogcups = dogfood.query(@activity, @weight)
-   #  doginfo = DogInfo.new
-   #  @dognutrition = doginfo.query(@breed)
-   # @chatgptout = ChatgptService.call('Causes, symptoms and remedies for rabies, lupus and alzheimers')
+    dogfood = DogFood.new
+    @dogcups = dogfood.query(@activity, @weight)
+    doginfo = DogInfo.new
+    @dognutrition = doginfo.query(@breed)
+    # @chatgptout = ChatgptService.call('Causes, symptoms and remedies for rabies 3 points each. Mention only values of Percentages of commonness of rabies in dogs, percentage in golden retrievers and severity on scale of 5')
+
+   # @chatgptout_causes = ChatgptService.call('Causes of rabies in 40 words numbered')
+
 
 
 

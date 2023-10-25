@@ -25,7 +25,7 @@
     <div class="left-box1-right" style="font-size:19px;">
      Breed : <%= @breed%> <br>
      Activity : <%= @activity%> <br>
-     Age in (Human Years) : 12 years
+     Age in (Human Years) : <%= @human_age %> years
     </div>
   </div>
   <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet",style:"bottom:5px;" %>
@@ -34,22 +34,20 @@
     <center><hr style="border-top: 2px solid black;width:90%;"></center>
   </div>
   <div class="left-box2" style="padding-right:4px;">
-<%= wicked_pdf_image_tag 'pdf-bullet-golden.png',class:"pdf-bullet",style:"bottom:5px;" %>
-<div class="left-box2-text">
+    <div class="left-box2-text">
+      <% @dognutrition = @dognutrition.gsub("\u2019", "'") %>
+        <% points = @dognutrition.split('. ') %>
+      <% points.each_slice(2) do |point_group| %>
+      <%= wicked_pdf_image_tag 'pdf-bullet-golden.png',class:"pdf-bullet",style:"bottom:5px;" %>
+        <%= point_group.join('. ') %><br>
+      <% end %>
+    </div>
+
+<%# <%= wicked_pdf_image_tag 'pdf-bullet-golden.png',class:"pdf-bullet",style:"bottom:5px;" %>
+<!-- <div class="left-box2-text">
   This page contains the analysis and report of the dogs whose images are uploaded in our website.
-</div><br>
-<%= wicked_pdf_image_tag 'pdf-bullet-golden.png',class:"pdf-bullet",style:"bottom:5px;" %>
-<div class="left-box2-text">
-  This page contains the analysis and report of the dogs whose images are uploaded in our website.
-</div><br>
-<%= wicked_pdf_image_tag 'pdf-bullet-golden.png',class:"pdf-bullet",style:"bottom:5px;" %>
-<div class="left-box2-text">
-  This page contains the analysis and report of the dogs whose images are uploaded in our website.
-</div><br>
-<%= wicked_pdf_image_tag 'pdf-bullet-golden.png',class:"pdf-bullet",style:"bottom:5px;" %>
-<div class="left-box2-text">
-  This page contains the analysis and report of the dogs whose images are uploaded in our website.
-</div>
+</div><br> -->
+
   </div>
 
   <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet",style:"bottom:5px;" %>
@@ -96,7 +94,7 @@
              <%= @height%> cm
         </div>
         <div style="border:1px solid black;padding-left:10%;">
-             Active
+             <%= @activity %>
         </div>
       </div>
       <div class="left-box2-second" style="font-size:19px;color:#00A9FF">
@@ -124,11 +122,11 @@
   <div class="pet information">
     <div style="text-align:center; justify-content:center"> The pet amount of pet food needed based on your pet's weight and activity:<div id="dogFoodImages">
       <br>
-      <% (1..5).each do |i| %>
+      <% (1..@dogcups.round).each do |i| %>
           <%= image_tag wicked_pdf_asset_base64("dogfoodani.png"), style: "height: 40px; width: 40px; margin:3px" %>
       <% end %>
 </div><br>
-    <%= @dogcups%> cups</div>
+    <%=@dogcups%> cups</div>
   </div>
 </div>
 
@@ -158,16 +156,16 @@
       </div>
       </div>
       <div class="right-box-table-first" style="font-size:15px;color:black">
-        <div style="border:1px solid black;padding-left:10%;">
+        <div style="border:1px solid black;text-align:center;">
              <b> Probability</b>
         </div>
-        <div style="border:1px solid black;padding-left:10%;">
+        <div style="border:1px solid black;text-align:center">
              93 %
         </div>
-        <div style="border:1px solid black;padding-left:10%;">
+        <div style="border:1px solid black;text-align:center">
              12 %
         </div>
-        <div style="border:1px solid black;padding-left:10%;">
+        <div style="border:1px solid black;text-align:center">
              10 %
         </div>
       </div>
@@ -205,6 +203,10 @@
       Viral Infection: Rabies is caused by a virus called Lyssavirus, mainly transmitted through animal bites.<br>
       Animal Hosts: Common animal carriers of rabies include dogs, bats, and raccoons.<br>
       Neurotropic Virus: The virus has an affinity for nerve cells, leading to central nervous system symptoms.<br>
+
+      <%# <%= @chatgptout %>
+
+
     </div>
 
     <%= wicked_pdf_image_tag 'pdf-bullet.png',class:"pdf-bullet-small",style:"bottom:5px;" %>
@@ -212,6 +214,7 @@
       Symptoms
     </div>
     <div class="right-box1-box2" style="background-color:orange">
+
       Early Symptoms: Fever, headache, and discomfort. <br>
       Neurological Symptoms: Anxiety, confusion, hallucinations, hydrophobia, and paralysis. <br>
       Later Stages: Coma, seizures, and death if not treated promptly with rabies vaccine. <br>
@@ -221,6 +224,7 @@
       Remedies
     </div>
     <div class="right-box1-box2">
+
       Post-Exposure Prophylaxis: Immediate rabies vaccine and rabies immune globulin (RIG). <br>
       Pre-Exposure Vaccination: For individuals at higher risk, like veterinarians. <br>
       Avoidance of Animal Bites: Practicing caution around animals, especially wildlife. <br>
