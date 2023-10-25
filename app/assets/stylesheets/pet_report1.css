@@ -4,7 +4,7 @@
  padding-left: 4%;
  padding-top: 3%;
  padding-right: 5%;
- padding-bottom: 3%;
+
  z-index:10;
 }
 .div1, .div2 {
@@ -102,8 +102,8 @@
 }
 
 .right-box1-text{
-  padding-left : 28px;
-  padding-right: 1px;
+  padding-left : 26px;
+  padding-right: 6px;
 }
 
 .right-box1-subhead{
@@ -111,11 +111,12 @@
   font-size: 26px;
   text-align: center;
   font-weight: bold;
+  margin-bottom: 0px;
 }
 
 .right-box1{
   padding-left: 0%;
-  padding-bottom: 25%;
+  padding-bottom: 20%;
   justify-content: center;
 }
 .right-box1-left{
@@ -124,6 +125,7 @@
   text-align: center;
   justify-content: center;
 
+
 }
 .right-box1-center{
   width: 33.33%;
@@ -131,7 +133,7 @@
   text-align: center;
 }
 .right-box1-right{
-  width: 33.33%;
+  width: 30%;
   float: left;
   text-align: center;
 }
@@ -164,14 +166,15 @@
 
 .pie{
   content: attr(data-value);
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: #eee;
   background-image: linear-gradient(to right, transparent 50%, #4CC9D8 0);
   position: relative;
   display: inline-block;
   margin: 10px;
+
 }
 
 .pie::after {
@@ -187,7 +190,8 @@
   top: 0;
   bottom: 0;
   text-align: center;
-  font: 900 20px/41px Tahoma;
+  font: 900 18px/35px Tahoma;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%)
 }
 
 @for $i from 0 through 50 {
@@ -202,3 +206,33 @@
     transform: rotate(#{$i/100 - .5}turn);
   }
 }
+
+
+
+
+.pet.information {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 25px;
+}
+
+.pet.information p {
+    margin: 0; /* Remove default margin for paragraphs inside the div */
+}
+.dog-food-image {
+        margin-right: 10px; /* Adjust the margin as needed for your desired spacing */
+        height: 40px;
+        width: 40px;
+    }
+
+    .right-box-table{
+      padding-left: 5%;
+      padding-bottom: 25%;
+    }
+
+    .right-box-table-first{
+      width: 45%;
+      float: left;
+    }

@@ -11,16 +11,16 @@ class HomeController < ApplicationController
     render plain: response.body
   end
   def show
-    # @name= params[:name]
-    # @age= params[:age]
-    # @breed= params[:breed]
-    # @weight= params[:weight]
-    # @activity= params[:activity]
-    # @image = RandomDog.get_random_image
-    # dogfood = DogFood.new
-    # @dogcups = dogfood.query(@activity, @weight)
-    # doginfo = DogInfo.new
-    # @dognutrition = doginfo.query(@breed)
+   #  @name= params[:name]
+   #  @age= params[:age]
+   #  @breed= params[:breed]
+   #  @weight= params[:weight]
+   #  @activity= params[:activity]
+   #  @image = RandomDog.get_random_image
+   #  dogfood = DogFood.new
+   #  @dogcups = dogfood.query(@activity, @weight)
+   #  doginfo = DogInfo.new
+   #  @dognutrition = doginfo.query(@breed)
    # @chatgptout = ChatgptService.call('Causes, symptoms and remedies for rabies, lupus and alzheimers')
 
 
