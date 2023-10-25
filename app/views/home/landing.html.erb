@@ -1,31 +1,157 @@
+<%= stylesheet_link_tag 'landing'%>
 <%= render 'navbar'%>
-<div id="title" class="slide header">
-  <h1>Pure CSS Parallax</h1>
-</div>
+<section  class="heading">
+  <%=image_tag "hospital.jpg",class:"image", id:"background", style:"width:100%;"%>
+  <%=image_tag "vet.png",class:"image", id:"vet1", style:"width:20%;"%>
+  <%=image_tag "vet2.png",class:"image", id:"vet2", style:"width:40%;"%>
+  <h2 id="text"><span>Healthy Pets, Happy Hearts<br></span>Your Pet's Health Journey Starts Here!</h2>
+</section>
+<section class="about" style="background-color:black;">
+  <h2 id="text2">Devs 'N' Revs Care</h2>
+  <div class="contain">
+    <div class="lefty">
+    1)  Image Input: Users can upload images of their pets and provide additional details about the dog, including its name, age, breed, and activity level. This information helps in narrowing down the potential diseases.
+<br><br>
+    2)  Machine Learning Model: Your input is then processed by a machine learning model that we've developed. This model has been trained on a comprehensive dataset that we prepared, ensuring high accuracy in disease detection.
+<br><br>
+    3)  Top 3 Disease Identification: The model identifies the top three possible diseases based on the input data. It does this by leveraging our custom APIs hosted on Hugging Face.
+<br><br>
+    4)  Detailed Disease Report: A comprehensive report is generated, detailing the identified diseases, their causes, symptoms, and recommended remedies. This information is provided with the assistance of ChatGPT from OpenAI, which uses its powerful natural language understanding capabilities.
+<br><br>
+    5)  Additional Information: We have integrated APIs for the number of cups of food, nutritional information, and dog images for various breeds, hosted on Hugging Face. Additionally, we extend our gratitude to Postman for their invaluable assistance in utilizing these APIs.
+<br><br>
+    6)  Downloadable Report: Users can easily download the generated report. This report serves as a valuable reference and empowers pet owners to take informed action regarding their pet's health.
+    </div>
+    <div class="righty">
+      <div class="">
+        <p><b>Enter your pet details :</b></p>
+        <div class="formy">
+          <%= form_with(url: home_show_path(format: :pdf), method: :get) do |form| %>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Pet Image :</span>
+              <%= form.file_field :image, class: "form-control" %>
+            </div>
 
-<div id="slide1" class="slide">
-  <div class="title">
-    <h1>Slide 1</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Pet Name :</span>
+              <%= form.text_field :name, class: "form-control" %>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Pet Age :</span>
+              <%= form.number_field :age, class: "form-control" %>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Pet Weight :</span>
+              <%= form.number_field :weight, step: 'any', class: "form-control" %>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Pet Ac :</span>
+              <%= form.select :activity, options_for_select([["Typical", "Typical"], ["Active", "Active"], ["Overweight", "Overweight"],
+          ["Overweight", "Overweight"], ["Highly Active", "Highly Active"], ["Senior, neutered, inactive", "Senior, neutered, inactive"],
+          ["Working Dog (light duty)", "Working Dog (light duty)"], ["Working Dog (moderate duty)", "Working Dog (moderate duty)"], ["Working Dog (heavy duty)", "Working Dog (heavy duty)"],]), {}, class: "custom-dropdown" %>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Pet Breed :</span>
+              <%= form.select :breed, options_for_select([
+       ["Australian Shepherd", "Australian Shepherd"],
+       ["Basset Hound", "Basset Hound"],
+       ["Bernedoodle", "Bernedoodle"],
+       ["Bichon Frise", "Bichon Frise"],
+       ["Boston Terrier", "Boston Terrier"],
+       ["Boxer", "Boxer"],
+       ["Boykin Spaniel", "Boykin Spaniel"],
+       ["Cairn Terrier", "Cairn Terrier"],
+       ["Cane Corso", "Cane Corso"],
+       ["Cane Corso Puppy", "Cane Corso Puppy"],
+       ["Catahoula Leopard", "Catahoula Leopard"],
+       ["Chihuahua", "Chihuahua"],
+       ["Corgi", "Corgi"],
+       ["Dachshund", "Dachshund"],
+       ["Doberman Pinscher", "Doberman Pinscher"],
+       ["French Bulldog", "French Bulldog"],
+       ["German Shepherd", "German Shepherd"],
+       ["Golden Retriever", "Golden Retriever"],
+       ["Goldendoodle", "Goldendoodle"],
+       ["Havanese", "Havanese"],
+       ["Jack Russell", "Jack Russell"],
+       ["Labradoodle", "Labradoodle"],
+       ["Labrador Retriever", "Labrador Retriever"],
+       ["Maltese", "Maltese"],
+       ["Miniature Schnauzer", "Miniature Schnauzer"],
+       ["Pitbull", "Pitbull"],
+       ["Pomeranian", "Pomeranian"],
+       ["Rottweiler Puppy", "Rottweiler Puppy"],
+       ["Shiba Inu", "Shiba Inu"],
+       ["Shih Tzu", "Shih Tzu"],
+       ["Siberian Husky", "Siberian Husky"],
+       ["Weimaraner", "Weimaraner"],
+       ["Vizsla", "Vizsla"],
+       ["Yorkie", "Yorkie"]
+     ]), {}, class: "custom-dropdown" %>
+    </div>
+
+            <%= form.submit "Submit", class: 'button-52', id:'loaderstart' %>
+          <% end %>
+        </div>
+        </div>
+    </div>
   </div>
-</div>
+</section>
 
-<div id="slide2" class="slide">
-  <div class="title">
-    <h1>Slide 2</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
-  </div>
-  <img src="https://picsum.photos/980/600">
-  <img src="https://picsum.photos/960/600">
-</div>
+<script type="text/javascript">
+  let vet = document.getElementById("vet1");
+  let vet2 = document.getElementById("vet2");
+  let text = document.getElementById("text");
+  window.addEventListener("scroll",()=>{
+    let value = window.scrollY;
+    vet.style.right = (10000+value*0.5) + "px";
+    vet2.style.left = (1000+value*0.5) + "px";
+  })
 
-<div id="slide3" class="slide">
-  <div class="title">
-    <h1>Slide 3</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
-  </div>
-</div>
+  document.addEventListener("DOMContentLoaded", function() {
+    var loader = document.getElementById("loader");
+    loader.style.display = "none";
+  });
+  var factsFetched = false; // Flag to track whether facts have been fetched
 
-<div id="slide4" class="slide header">
-    <h1>The End</h1>
-</div>
+  function fetchDogFact() {
+    $.ajax({
+      url: '/fetch_dog_facts', // Route to your controller action
+      method: 'GET',
+      success: function (data) {
+        $('#apiResponse').text('"' + data + '"'); // Update the content with the new dog fact
+      },
+      error: function (error) {
+        console.error('Error fetching dog fact:', error);
+      }
+    });
+  }
+
+  // Attach a click event listener to the button
+  $('#myButton').on('click', function () {
+    if (!factsFetched) { // Check if facts have not been fetched yet
+      fetchDogFact(); // Fetch dog fact for the first time when the button is clicked
+      factsFetched = true; // Set the flag to indicate that facts have been fetched
+    }
+  });
+
+  // Attach a click event listener to the button
+  $('#loaderstart').on('click', function () {
+    var loader = document.getElementById("loader");
+    loader.style.display = "flex";
+    // if (!factsFetched) { // Check if facts have not been fetched yet
+    //   fetchDogFact(); // Fetch dog fact for the first time when the button is clicked
+    //   factsFetched = true; // Set the flag to indicate that facts have been fetched
+    // }
+  });
+  // Call fetchDogFact every 7 seconds after the first button click
+  setInterval(function () {
+    if (factsFetched) { // Check if facts have been fetched
+      fetchDogFact();
+    }
+  }, 7000);
+</script>
