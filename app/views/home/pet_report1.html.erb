@@ -4,9 +4,7 @@
   <b><div class="heading"><p style="position:relative;z-index:10;font-size:45px;">  Devs 'N' Revs Care : Pet Analysis Report </p></div></b>
   </h1>
   <p style="position:relative;z-index:10;">
-  This page contains the analysis and report of the dogs whose images are uploaded in our website.
-  This page contains the analysis and report of the dogs whose images are uploaded in our website.
-  This page contains the analysis and report of the dogs whose images are uploaded in our website.
+  Welcome to the Pet Analysis Report provided by Devs 'N' Revs Care. This detailed report offers a deep dive into the analysis of the dogs whose images have been uploaded to our website. We understand the importance of your furry companions, and this report aims to provide valuable insights into their health, behavior, and overall well-being. Our goal is to empower you with the knowledge needed to ensure a happy, healthy, and fulfilling life for your beloved pets.
   </p>
 </div>
  <br>
@@ -201,21 +199,21 @@
     </div>
     <div class="right-box1">
       <div class="right-box1-left" style="font-size:15px;">
-       3 of every 5 dogs affected <br>
+       <%= @general_dogs/20.0 %> of every 5 dogs affected <br>
        <div class="example">
-         <div class="pie" data-value="60" style="background-color:green"></div>
+         <div class="pie" data-value="<%= @general_dogs %>" style="background-color:green"></div>
          </div>
       </div>
       <div class="right-box1-center" style="font-size:15px;">
-       3 of every 5 goldern retrievers affected<br>
+       <%= @breed_dogs/20.0 %> of every 5 <%= @breed %> affected<br>
        <div class="example">
-         <div class="pie" data-value="60" style="background-color:blue"></div>
+         <div class="pie" data-value="<%= @breed_dogs %>" style="background-color:blue"></div>
          </div>
       </div>
       <div class="right-box1-right" style="font-size:15px;">
-       Severity of the disease<br>
+       Severity of <%= @breed %> <br>
        <div class="example">
-         <div class="pie" data-value="60" style="background-color:orange"></div>
+         <div class="pie" data-value="<%= @severity %>" style="background-color:orange"></div>
          </div>
       </div>
     </div>
@@ -225,11 +223,9 @@
       Causes
     </div>
     <div class="right-box1-box2">
-      Viral Infection: Rabies is caused by a virus called Lyssavirus, mainly transmitted through animal bites.<br>
-      Animal Hosts: Common animal carriers of rabies include dogs, bats, and raccoons.<br>
-      Neurotropic Virus: The virus has an affinity for nerve cells, leading to central nervous system symptoms.<br>
+    <%= @causes %>
 
-      <%# <%= @chatgptout %>
+
 
 
     </div>
@@ -240,9 +236,7 @@
     </div>
     <div class="right-box1-box2" style="background-color:orange">
 
-      Early Symptoms: Fever, headache, and discomfort. <br>
-      Neurological Symptoms: Anxiety, confusion, hallucinations, hydrophobia, and paralysis. <br>
-      Later Stages: Coma, seizures, and death if not treated promptly with rabies vaccine. <br>
+        <%= @symptoms %>
     </div>
     <%= image_tag wicked_pdf_asset_base64('pdf-bullet.png'),class:"pdf-bullet-small",style:"bottom:5px;" %>
     <div class="right-box1-box2-head">
@@ -250,14 +244,12 @@
     </div>
     <div class="right-box1-box2">
 
-      Post-Exposure Prophylaxis: Immediate rabies vaccine and rabies immune globulin (RIG). <br>
-      Pre-Exposure Vaccination: For individuals at higher risk, like veterinarians. <br>
-      Avoidance of Animal Bites: Practicing caution around animals, especially wildlife. <br>
+    <%= @remedies %>
     </div>
 
 
 <div class="">
-  <%= image_tag wicked_pdf_asset_base64( 'stamp-final.png') ,style:"width:150px;position:fixed;top:87%;left:80%;border-radius:10px;z-index:30;"%>
+  <%= image_tag wicked_pdf_asset_base64( 'stamp12.png') ,style:"width:350px;position:fixed;top:1105px;left:660px;border-radius:10px;z-index:30;overflow:hidden"%>
 </div>
 <div class="watermark">
   <%=  image_tag wicked_pdf_asset_base64( 'logo.png') ,style:"border:none;border-radius:50%;width:200%;opacity: 0.1;"%>

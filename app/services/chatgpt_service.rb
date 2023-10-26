@@ -8,7 +8,7 @@ class ChatgptService
     @options = {
       headers: {
         'Content-Type' => 'application/json',
-        'Authorization' => "Bearer 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"
+        'Authorization' => "Bearer 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"
       }
     }
     @api_url = 'https://api.openai.com/v1/chat/completions'
