@@ -74,10 +74,10 @@
              Expected
         </div>
         <div style="border:1px solid black;padding-left:10%;">
-             50lbs0-60lbs
+            <%= @dogweightrange %>
         </div>
         <div style="border:1px solid black;padding-left:10%;">
-             60cm-70cm
+             <%= @dogheightrange %>
         </div>
         <div style="border:1px solid black;padding-left:6%;">
              Typical/Active
@@ -91,10 +91,18 @@
              <%= @weight%> lbs
         </div>
         <div style="border:1px solid black;padding-left:10%;">
-             <%= @height%> cm
+             <%= @height%> inches
         </div>
         <div style="border:1px solid black;padding-left:10%;">
+          <% if @activity == "Senior, neutered, inactive"%>
+             Inactive
+          <% elsif @activity[0] == 'W' %>
+             Working
+          <% elsif @activity[0] == 'H' %>
+             Active
+          <% else %>
              <%= @activity %>
+          <% end %>
         </div>
       </div>
       <div class="left-box2-second" style="font-size:19px;color:#00A9FF">
@@ -102,13 +110,29 @@
              Status
         </div>
         <div style="border:1px solid black;padding-left:10%;">
+          <% min_weight, max_weight = @dogweightrange.split('-').map(&:to_i) %>
+          <% @weight_int = @weight.to_i%>
+          <% if @weight_int >= min_weight && @weight_int <= max_weight %>
              Normal
+          <% else %>
+             Abnormal
+          <% end %>
         </div>
         <div style="border:1px solid black;padding-left:10%;">
+          <% min_height, max_height = @dogheightrange.split('-').map(&:to_i) %>
+          <% @height_int = @height.to_i%>
+          <% if @height_int >= min_height && @height_int <= max_height %>
              Normal
+          <% else %>
+             Abnormal
+          <% end %>
         </div>
         <div style="border:1px solid black;padding-left:10%;">
+          <% if @activity != "Overweight" || @activity == "Senior, neutered, inactive" %>
              Normal
+          <% else %>
+             Abnormal
+          <% end %>
         </div>
       </div>
       </div>
@@ -122,7 +146,7 @@
   <div class="pet information">
     <div style="text-align:center; justify-content:center"> The pet amount of pet food needed based on your pet's weight and activity:<div id="dogFoodImages">
       <br>
-      <% (1..@dogcups.round).each do |i| %>
+      <% (1..@dogcups.ceil).each do |i| %>
           <%= image_tag wicked_pdf_asset_base64("dogfoodani.png"), style: "height: 40px; width: 40px; margin:3px" %>
       <% end %>
 </div><br>
@@ -146,13 +170,13 @@
            <b>Disease Detected</b>
       </div>
       <div style="border:1px solid black;padding-left:10%;">
-           Rabies
+           <%= @parsed_predictions[0][:class_index]%>
       </div>
       <div style="border:1px solid black;padding-left:10%;">
-           Alzheimers
+           <%= @parsed_predictions[1][:class_index]%>
       </div>
       <div style="border:1px solid black;padding-left:10%;">
-           Lupus
+           <%= @parsed_predictions[0][:class_index]%>
       </div>
       </div>
       <div class="right-box-table-first" style="font-size:15px;color:black">
@@ -160,19 +184,20 @@
              <b> Probability</b>
         </div>
         <div style="border:1px solid black;text-align:center">
-             93 %
+              <%= sprintf("%.2f",  @parsed_predictions[0][:probability]*100) %> %
         </div>
         <div style="border:1px solid black;text-align:center">
-             12 %
+             <%= sprintf("%.2f",  @parsed_predictions[1][:probability]*100) %> %
         </div>
         <div style="border:1px solid black;text-align:center">
-             10 %
+             <%= sprintf("%.2f",  @parsed_predictions[2][:probability]*100) %> %
         </div>
       </div>
     </div>
     <br>
   <div class="right-box1-subhead">
-    Rabies
+    <%= @parsed_predictions[0][:class_index]%>
+    <%# <%= @predictions %>
     </div>
     <div class="right-box1">
       <div class="right-box1-left" style="font-size:15px;">

@@ -1,5 +1,15 @@
 <%= stylesheet_link_tag 'landing'%>
 <%= render 'navbar'%>
+<div id="loader">
+  <br><br>
+  <center><h3>Wait while,<br> Your online vet is checking your pet!</h3><center>
+<br><br><br><br><br><br><br><br><br><br><br>
+Till then increase your knowledge about your pet <br><br>
+ <button id="myButton" class="button-53" role="button">Get Facts</button>
+ <br>
+  <b><div id="apiResponse"></div></b>
+</div>
+
 <section  class="heading">
   <%=image_tag "hospital.jpg",class:"image", id:"background", style:"width:100%;"%>
   <%=image_tag "vet.png",class:"image", id:"vet1", style:"width:20%;"%>
@@ -26,10 +36,10 @@
       <div class="">
         <p><b>Enter your pet details :</b></p>
         <div class="formy">
-          <%= form_with(url: home_show_path(format: :pdf), method: :get) do |form| %>
+          <%= form_with(url: home_show_path(format: :pdf), method: :post, multipart: true) do |form| %>
             <div class="input-group mb-3">
               <span class="input-group-text">Pet Image :</span>
-              <%= form.file_field :image, class: "form-control" %>
+              <%= form.file_field :image, class: "form-control"%>
             </div>
 
             <div class="input-group mb-3">
@@ -55,7 +65,7 @@
             <div class="input-group mb-3">
               <span class="input-group-text">Pet Activity :</span>
               <%= form.select :activity, options_for_select([["Typical", "Typical"], ["Active", "Active"], ["Overweight", "Overweight"],
-          ["Overweight", "Overweight"], ["Highly Active", "Highly Active"], ["Senior, neutered, inactive", "Senior, neutered, inactive"],
+         ["Highly Active", "Highly Active"], ["Senior, neutered, inactive", "Senior, neutered, inactive"],
           ["Working Dog (light duty)", "Working Dog (light duty)"], ["Working Dog (moderate duty)", "Working Dog (moderate duty)"], ["Working Dog (heavy duty)", "Working Dog (heavy duty)"],]), {}, class: "custom-dropdown" %>
             </div>
 

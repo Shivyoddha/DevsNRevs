@@ -1,9 +1,11 @@
 class HomeController < ApplicationController
   def index
+    @image = params[:image]
   end
 
   def submit_form
-  redirect_to home_show_path(name: params[:name], age: params[:age], breed: params[:breed], weight: params[:weight], height:params[:height], activity: params[:activity], format: :pdf)
+    redirect_to home_index_path(image:params[:image])
+    #redirect_to home_show_path(name: params[:name], age: params[:age], breed: params[:breed], weight: params[:weight], height:params[:height], activity: params[:activity], image: params[:image], format: :pdf)
   end
 
   def fetch_dog_facts
@@ -11,12 +13,33 @@ class HomeController < ApplicationController
     render plain: response.body
   end
   def show
-    @name= params[:name]
-    @age= params[:age]
-    @breed= params[:breed]
-    @weight= params[:weight]
-    @activity= params[:activity]
-    @human_age = (16 * Math.log(@age.to_f) + 31).round
+    @image = params[:image]
+    begin
+       predictions = ImagePredictionService.new.predict_image(@image)
+       @predictions = predictions["predictions"]
+       @parsed_predictions = []
+       predictions["predictions"].each do |prediction|
+       @class_index = prediction["class_index"]
+       @probability = prediction["probability"]
+     @parsed_predictions << { class_index: @class_index, probability: @probability }
+  end
+   end
+
+
+      # Handle predictions as needed
+
+    @name = params[:name]
+    @age = params[:age]
+    @breed = params[:breed]
+    @weight = params[:weight]
+    @height = params[:height]
+    @activity = params[:activity]
+    human_age = HumanAge.new
+    @human_age = human_age.query(@weight,@age)
+    dogranges = DogRanges.new
+    @dogranges = dogranges.query(@breed)
+    @dogweightrange =  @dogranges["weight"]
+    @dogheightrange = @dogranges["height"]
    #  @image = RandomDog.get_random_image
     dogfood = DogFood.new
     @dogcups = dogfood.query(@activity, @weight)
