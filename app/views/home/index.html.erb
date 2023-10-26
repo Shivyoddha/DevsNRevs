@@ -2,7 +2,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <div class="background">
   </div>
-  <%= image_tag @image%>
 <div id="loader">
   <br><br>
   <center><h3>Wait while,<br> Your online vet is checking your pet!</h3><center>
@@ -147,7 +146,7 @@ Till then increase your knowledge about your pet <br><br>
   // Attach a click event listener to the button
   $('#loaderstart').on('click', function () {
     var loader = document.getElementById("loader");
-    loader.style.display = "flex";
+    loader.style.display = "absolute";
     // if (!factsFetched) { // Check if facts have not been fetched yet
     //   fetchDogFact(); // Fetch dog fact for the first time when the button is clicked
     //   factsFetched = true; // Set the flag to indicate that facts have been fetched

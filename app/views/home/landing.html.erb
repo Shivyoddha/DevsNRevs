@@ -1,10 +1,10 @@
 <%= stylesheet_link_tag 'landing'%>
 <%= render 'navbar'%>
-<div id="loader">
-  <br><br>
-  <center><h3>Wait while,<br> Your online vet is checking your pet!</h3><center>
-<br><br><br><br><br><br><br><br><br><br><br>
-Till then increase your knowledge about your pet <br><br>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <div id="overlay"></div>
+<div id="loader" style="z-index:1000;">
+  <center><h3 style="margin-top:50px;margin-left:5px;">Wait while,<br> Your online vet is checking your pet!</h3><center>
+<br><br><br><br><br><br><br><br><br><br>Till then increase your knowledge about your pet <br><br>
  <button id="myButton" class="button-53" role="button">Get Facts</button>
  <br>
   <b><div id="apiResponse"></div></b>
@@ -121,6 +121,8 @@ Till then increase your knowledge about your pet <br><br>
   let vet = document.getElementById("vet1");
   let vet2 = document.getElementById("vet2");
   let text = document.getElementById("text");
+  var overlay = document.getElementById("overlay");
+
   window.addEventListener("scroll",()=>{
     let value = window.scrollY;
     vet.style.right = (10000+value*0.5) + "px";
@@ -130,6 +132,7 @@ Till then increase your knowledge about your pet <br><br>
   document.addEventListener("DOMContentLoaded", function() {
     var loader = document.getElementById("loader");
     loader.style.display = "none";
+    overlay.style.display = "none";
   });
   var factsFetched = false; // Flag to track whether facts have been fetched
 
@@ -158,6 +161,7 @@ Till then increase your knowledge about your pet <br><br>
   $('#loaderstart').on('click', function () {
     var loader = document.getElementById("loader");
     loader.style.display = "flex";
+    overlay.style.display = "block";
     // if (!factsFetched) { // Check if facts have not been fetched yet
     //   fetchDogFact(); // Fetch dog fact for the first time when the button is clicked
     //   factsFetched = true; // Set the flag to indicate that facts have been fetched
