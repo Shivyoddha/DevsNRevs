@@ -35,9 +35,9 @@ Thank you for choosing our Pet Disease Identification Website. We are committed 
 
 ### Tech Stack Used:
 
-* Ruby On Rails - 7
+* Ruby On Rails - 6
 
-* SQLite as Database
+* PostgreSQL as Database
 
 * HTML ,CSS & JS
 
@@ -46,6 +46,10 @@ Thank you for choosing our Pet Disease Identification Website. We are committed 
 ### Key Features:
 
 * Website hosted on Render
+
+* Custom - made free api's using FastAPI and hosted on free hosting platform ( hugging faces ) and tested on Postman
+
+* Pdf generated for free by using wicked_pdf gem in rails 
 
 * ML Model hosted and custom API's created on huggingface
 
