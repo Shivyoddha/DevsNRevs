@@ -5,6 +5,8 @@ Welcome to our Pet Disease Identification website! This platform is designed to 
 
 This project was developed on the course of submission for <b>BITS Pilani Postman API Hackathon 3.0</b>
 
+The list of all the API's used in this webiste is available here : https://github.com/Rjshri/Collection-of-API-s-used-for-DevsNRevs-Care
+
 ### How It Works:
 
 1. <b>Image Input:</b> Users can upload images of their pets and provide additional details about the dog, including its name, age, breed, and activity level. This information helps in narrowing down the potential diseases.
