@@ -4,11 +4,11 @@ class ChatgptService
   attr_reader :api_url, :options, :model, :message
 
   def initialize(message, model = 'gpt-3.5-turbo')
-    api_key = Rails.application.credentials.chatgpt_api_key
+    @api_key = Rails.application.credentials.dig(:my_api_key, :api_key)
     @options = {
       headers: {
         'Content-Type' => 'application/json',
-        'Authorization' => "Bearer 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"
+        'Authorization' => "Bearer #{@api_key}"
       }
     }
     @api_url = 'https://api.openai.com/v1/chat/completions'

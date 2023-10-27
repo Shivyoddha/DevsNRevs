@@ -59,9 +59,10 @@ Just print these, don\'t explain')
     @general_dogs = parsed_json["h1"]
     @breed_dogs = parsed_json["h2"]
     @severity = parsed_json["h3"]
-    @causes = parsed_json["h4"].join("\n")
-    @symptoms = parsed_json["h5"].join("\n")
-    @remedies = parsed_json["h6"].join("\n")
+    @causes = parsed_json["h4"].join("\n").html_safe
+@symptoms = parsed_json["h5"].join("\n").html_safe
+@remedies = parsed_json["h6"].join("\n").html_safe
+
 
     respond_to do |format|
       format.html
