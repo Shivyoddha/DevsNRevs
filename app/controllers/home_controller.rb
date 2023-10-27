@@ -51,17 +51,17 @@ i want all these details in json format :
 1) percentage of dogs having this disease (header: h1): (int)(out of 100)
 2) Percentage of dogs of this breed having that disease (header:h2): (int)(out of 100)
 3) Severity of this disease (header:h3) : (int)(out of 100)
-4) Causes of this disease (header:h4) : (only 3 lines)
-5) Symptoms of this disease (header:h5) : (only 3 lines)
-6) Remedies of this disease (header:h6) : (only 3 lines)
+4) Causes of this disease (header:h4) : (only 4 lines)
+5) Symptoms of this disease (header:h5) : (only 4 lines)
+6) Remedies of this disease (header:h6) : (only 4 lines)
 Just print these, don\'t explain')
     parsed_json = JSON.parse(@chatgptout)
     @general_dogs = parsed_json["h1"]
     @breed_dogs = parsed_json["h2"]
     @severity = parsed_json["h3"]
-    @causes = parsed_json["h4"]
-    @symptoms = parsed_json["h5"]
-    @remedies = parsed_json["h6"]
+    @causes = parsed_json["h4"].join("\n")
+    @symptoms = parsed_json["h5"].join("\n")
+    @remedies = parsed_json["h6"].join("\n")
 
     respond_to do |format|
       format.html
