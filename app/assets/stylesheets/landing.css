@@ -87,6 +87,7 @@ header .navlist li a:hover{
   background-color: black;
   color:white;
   font-size: 400%;
+  z-index: 1;
 }
 
 #background{
@@ -115,6 +116,7 @@ header .navlist li a:hover{
   bottom:120px;
   border:10px;
   border-color: white;
+  padding: 20px;
 }
 
 .contain{
@@ -129,6 +131,8 @@ header .navlist li a:hover{
   justify-content: center;
   align-items: center;
   width:50%;
+  position: relative;
+  z-index: 0;
 }
 
 
@@ -177,4 +181,182 @@ header .navlist li a:hover{
   height: 100%;
   background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
   z-index: 999; /* Ensure the overlay appears above other elements */
+}
+
+@media (max-width: 768px) {
+  /* Smaller screens */
+
+  .heading h2 {
+    font-size: 150%;
+  }
+
+  .heading span {
+    font-size: 150%;
+  }
+
+  #text2 {
+    font-size: 300%;
+  }
+
+  .about {
+    bottom: 50px;
+  }
+
+  .contain {
+    flex-direction: column;
+  }
+
+  .lefty {
+    width: 100%;
+  }
+
+  .button-52 {
+    left: 25%;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Even smaller screens */
+
+  .heading h2 {
+    font-size: 120%;
+  }
+
+  .heading span {
+    font-size: 120%;
+  }
+
+  #text2 {
+    font-size: 250%;
+  }
+
+  .about {
+    bottom: 20px;
+  }
+
+  .button-52 {
+    left: 20%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .about #text2 {
+    font-size: 250%;
+  }
+}
+
+@media (max-width: 576px) {
+  .about #text2 {
+    font-size: 200%;
+  }
+}
+
+
+.about #text2 + .contain {
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  .contain {
+    display: block;
+    margin: 0 0 20px;
+  }
+}
+
+
+/* Navbar */
+
+@media (max-width: 768px) {
+  /* Smaller screens */
+
+  header .navlist {
+    display: none;
+  }
+
+  header .toggle-nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Regular screens */
+
+  header .toggle-nav {
+    display: none;
+  }
+
+  header .navlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Smaller screens */
+
+  header .navlist {
+    flex-direction: column;
+  }
+}
+
+
+/* Heading */
+
+@media (max-width: 768px) {
+  /* Smaller screens */
+
+  .heading {
+    height: 50vh;
+  }
+
+  .heading h2 {
+    font-size: 2rem;
+    text-shadow: 3px 3px 5px #00A9FF;
+  }
+
+  .heading span {
+    font-size: 150%;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Even smaller screens */
+
+  .heading {
+    height: 30vh;
+  }
+
+  .heading h2 {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 3px #00A9FF;
+  }
+
+  .heading span {
+    font-size: 120%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .heading #text {
+    display: none;
+  }
+
+  .heading #vet2 {
+    display: none;
+  }
+}
+
+.heading .image {
+  max-width: 100%;
+  height: auto;
 }
