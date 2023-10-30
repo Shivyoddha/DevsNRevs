@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+
+
   def index
     @image = params[:image]
   end

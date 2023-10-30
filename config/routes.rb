@@ -7,6 +7,7 @@ get 'home/show.pdf', to: 'home#show', format: 'pdf'
    get 'home/index'
    root "home#landing"
  get 'home/landing'
+ get 'home/mobile', to: 'home#mobile'
  get 'home/pet_report1', to: 'home#pet_report1'
  get 'fetch_dog_facts', to: 'home#fetch_dog_facts'
  get 'home/submit_form'

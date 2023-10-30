@@ -15,6 +15,9 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
+  config.middleware.use Mobvious::Manager do |config|
+  config.strategies = [Mobvious::Strategies::MobileView.new]
+end
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
